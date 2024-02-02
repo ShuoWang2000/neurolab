@@ -230,7 +230,7 @@ def newelm(minmax, size, transf=None):
         layers.append(l)
     connect = [[i - 1] for i in range(len(layers) + 1)]
     # recurrent set
-    connect[0] = [-1, 0]
+    connect[0] = [-1, len(size)-2]
 
     net = Net(minmax, net_co, layers, connect, train.train_gdx, error.MSE())
     return net
