@@ -224,7 +224,7 @@ def newelm(minmax, size, transf=None):
 
     layers = []
     for i, nn in enumerate(size):
-        layer_ci = size[i - 1] if i > 0 else net_ci + size[0]
+        layer_ci = size[i - 1] if i > 0 else net_ci + size[-1]
         l = layer.Perceptron(layer_ci, nn, transf[i])
         # l.initf = init.InitRand([-0.1, 0.1], 'wb')
         layers.append(l)
